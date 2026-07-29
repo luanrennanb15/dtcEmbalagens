@@ -135,7 +135,7 @@ const CONFIG = {
         "Feita em plástico virgem: mais resistente, mais transparente e com acabamento melhor que a sacola reciclada. Vendida por milheiro, com contagem certa.",
       medidas: ["25x35cm", "38x48cm"],
       unidade: "Pacote com 1.000 unidades",
-      imagem: "",
+      imagem: "assets/img/produtos/sacola-milheira.jpg",
     },
     {
       nome: "Copo Descartável",
@@ -144,7 +144,7 @@ const CONFIG = {
         "Copos para água, café, refrigerante e chopp. Resistência uniforme, sem trincar na hora de servir.",
       medidas: ["50ml", "80ml", "150ml", "180ml", "770ml"],
       unidade: "Caixa fechada",
-      imagem: "",
+      imagem: "assets/img/produtos/copo-descartavel.jpg",
     },
     {
       nome: "Saco de Lixo Reforçado",
@@ -153,7 +153,7 @@ const CONFIG = {
         "Espessura reforçada para uso comercial e resíduo pesado. Não rasga na hora de retirar do cesto.",
       medidas: ["20L", "40L", "60L", "100L"],
       unidade: "Pacote fechado",
-      imagem: "",
+      imagem: "assets/img/produtos/saco-lixo.jpg",
     },
     {
       nome: "Saco Acoplado (picotado)",
@@ -162,7 +162,7 @@ const CONFIG = {
         "Saco plástico em bloco picotado, destacado folha a folha. Prático no balcão de hortifruti, açougue e padaria.",
       medidas: ["400 folhas", "500 folhas"],
       unidade: "Bloco",
-      imagem: "",
+      imagem: "assets/img/produtos/saco-acoplado.jpg",
     },
     {
       nome: "Garrafas Plásticas",
@@ -171,7 +171,7 @@ const CONFIG = {
         "Garrafas para envase de água, sucos e bebidas. Consulte capacidades e disponibilidade.",
       medidas: ["Sob consulta"], // TODO: pedir medidas e forma de venda ao Douglas
       unidade: "",
-      imagem: "",
+      imagem: "assets/img/produtos/garrafas.jpg",
     },
     {
       nome: "Embalagens Plásticas em Geral",
