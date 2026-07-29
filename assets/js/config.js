@@ -180,7 +180,7 @@ const CONFIG = {
         "Não achou o item na lista? Trabalhamos com linha ampla e conseguimos sob encomenda. Mande o que você precisa que a gente cota.",
       medidas: ["Sob encomenda"],
       unidade: "",
-      imagem: "",
+      imagem: "assets/img/produtos/embalagens-geral.jpg",
     },
   ],
 

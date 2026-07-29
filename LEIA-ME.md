@@ -84,18 +84,22 @@ marcando exatamente onde.
 
 ## Fotos dos produtos
 
-Oito dos nove produtos têm foto, em `assets/img/produtos/`. Só "Embalagens
-Plásticas em Geral" segue com o ícone de caixa, o que faz sentido — é o card
-genérico de "peça o que não está na lista", não um produto específico.
+Os nove produtos têm foto, em `assets/img/produtos/`. As nove somam 444 KB e
+carregam sob demanda, então não pesam na abertura da página.
 
 As fotos foram padronizadas antes de entrar no site: recortadas na borda do
 produto, redimensionadas para o produto ocupar 92% do quadro e coladas numa tela
 branca de 900x675 (proporção 4:3, a mesma da moldura do card). É por isso que os
 cards ficam idênticos mesmo os originais tendo tamanhos bem diferentes, de
-491x419 a 1536x1024. As oito juntas pesam 365 KB e carregam sob demanda
-(`loading="lazy"`), então não atrasam a abertura da página.
+491x419 a 1536x1024.
 
-Quatro dos originais vieram com título e descrição escritos dentro da imagem.
+A de "Embalagens em Geral" exigiu um passo a mais: a faixa de produtos era muito
+larga (2,9:1) e, espremida no card, os itens ficariam pequenos demais para
+reconhecer. Em vez de encolher tudo, recortei um trecho de 4:3 com potes,
+frascos e sacos zip — variedade suficiente para a mensagem do card, com os itens
+em tamanho legível e nenhum cortado pela borda.
+
+Cinco dos originais vieram com título e descrição escritos dentro da imagem.
 Esse texto foi apagado no tratamento, de propósito: ele repetiria o que o card
 já escreve logo abaixo, ficaria ilegível no tamanho real de exibição, não é lido
 pelo Google e não funciona em leitor de tela. Texto é papel do HTML; a imagem
