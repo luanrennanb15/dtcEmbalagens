@@ -408,14 +408,17 @@
      ============================================================ */
   function injetarSchema() {
     const c = CONFIG.contato;
+    // Pasta onde o site está. Funciona tanto na raiz de um domínio próprio
+    // quanto num subcaminho, como no GitHub Pages (/usuario/repositorio/).
+    const base = window.location.href.split(/[?#]/)[0].replace(/[^/]*$/, "");
     const schema = {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: CONFIG.empresa.nome,
       slogan: CONFIG.empresa.slogan,
       description: CONFIG.empresa.descricaoCurta,
-      url: window.location.origin,
-      logo: window.location.origin + "/assets/img/logo.svg",
+      url: base,
+      logo: base + "assets/img/logo.svg",
       telephone: CONFIG.consultores.map((co) => "+" + co.whatsapp),
       email: c.email || undefined,
       sameAs: c.instagram ? [c.instagram] : undefined,

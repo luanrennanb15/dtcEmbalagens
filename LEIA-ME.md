@@ -94,13 +94,45 @@ gratuita no Formspree, copie a URL do endpoint e cole em `CONFIG.formEndpoint`.
 
 ## Publicar
 
-O site é estático, então qualquer hospedagem serve. As opções gratuitas mais
-simples são Netlify (arrastar a pasta em app.netlify.com/drop e está no ar),
-Vercel e GitHub Pages — este último aproveita o repositório git que já existe na
-pasta. Depois é só apontar o domínio para a hospedagem escolhida.
+O site é estático, então qualquer hospedagem serve, e as boas são gratuitas.
 
-Ao publicar, atualize a URL nas meta tags do `index.html` (`canonical` e
-`og:url`) e cadastre o negócio no Google Meu Negócio. Para uma distribuidora
-local recém-aberta, o perfil no Google costuma trazer mais contato nos primeiros
-meses do que o site sozinho — e o site serve justamente para dar credibilidade a
-quem clicar de lá.
+### GitHub Pages
+
+A pasta já é um repositório apontando para
+`github.com/luanrennanb15/dtcEmbalagens`. No terminal, dentro da pasta:
+
+```
+git add .
+git commit -m "Site DTC Embalagens"
+git push origin main
+```
+
+Depois, no GitHub: **Settings → Pages → Source: Deploy from a branch →
+Branch: main → pasta / (root) → Save**. Em um ou dois minutos o site fica em
+`https://luanrennanb15.github.io/dtcEmbalagens/`.
+
+O repositório precisa ser **público** — no plano gratuito o Pages só funciona
+assim. Isso significa que qualquer pessoa consegue ler o código. O
+`TABELA-PRECOS-INTERNA.md` e a pasta `imagens/` estão no `.gitignore`
+justamente por isso, então não sobem. Confira com `git status` antes do commit:
+se algum dos dois aparecer na lista, pare e verifique o `.gitignore`.
+
+### Netlify
+
+Para apresentar ao cliente, o Netlify costuma ficar melhor: o endereço sai como
+`dtc-embalagens.netlify.app`, sem o nome de usuário e sem o `/dtcEmbalagens/` no
+meio. É só arrastar a pasta em `app.netlify.com/drop` — não precisa de git nem
+de conta para o primeiro teste. Só lembre de apagar o `TABELA-PRECOS-INTERNA.md`
+antes, porque no upload manual o `.gitignore` não vale.
+
+### Ao sair da demonstração
+
+O `index.html` está com `noindex` ligado de propósito, para o Google não indexar
+o endereço provisório e depois disputar posição com o domínio definitivo. Quando
+publicar no domínio real, troque para `index, follow` e atualize as URLs de
+`canonical` e `og:url` — há um comentário no arquivo marcando o lugar.
+
+Cadastre também o negócio no Google Meu Negócio. Para uma distribuidora local
+recém-aberta, o perfil no Google costuma trazer mais contato nos primeiros meses
+do que o site sozinho — e o site serve justamente para dar credibilidade a quem
+clicar de lá.
