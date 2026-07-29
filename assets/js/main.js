@@ -187,9 +187,14 @@
     const medidas = (p.medidas || [])
       .map((m) => `<span class="medida">${m}</span>`)
       .join("");
-    const img = p.imagem
-      ? `<img src="${p.imagem}" alt="${p.nome}" loading="lazy" />`
+    // width/height declarados evitam o "pulo" do layout enquanto a foto carrega
+    const temFoto = Boolean(p.imagem);
+    const img = temFoto
+      ? `<img src="${p.imagem}" alt="${p.nome} — DTC Embalagens" width="900" height="675" loading="lazy" decoding="async" />`
       : ICONES.box;
+    const classeImg = temFoto
+      ? "card-produto__img card-produto__img--foto"
+      : "card-produto__img";
 
     // Como o produto é vendido — responde metade das dúvidas antes de perguntar.
     const unidade = p.unidade
@@ -198,7 +203,7 @@
 
     return `
       <article class="card-produto revelar">
-        <div class="card-produto__img">${img}</div>
+        <div class="${classeImg}">${img}</div>
         <div class="card-produto__corpo">
           <div class="card-produto__cat">${nomeCategoria(p.categoria)}</div>
           <h3>${p.nome}</h3>
