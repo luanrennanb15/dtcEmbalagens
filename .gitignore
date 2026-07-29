@@ -1,0 +1,10 @@
+# Nunca versionar/publicar informação comercial interna
+TABELA-PRECOS-INTERNA.md
+
+# Fotos de origem (cartão de visita etc.) — não fazem parte do site
+imagens/
+
+# Lixo de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
