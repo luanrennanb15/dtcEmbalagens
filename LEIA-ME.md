@@ -84,14 +84,22 @@ marcando exatamente onde.
 
 ## Fotos dos produtos
 
-Três produtos já têm foto: sacola branca, preta e amarela. Ficam em
-`assets/img/produtos/`. Os seis restantes mostram um ícone de caixa sobre um
-degradê cinza — funciona, mas converte bem menos que foto real.
+Oito dos nove produtos têm foto, em `assets/img/produtos/`. Só "Embalagens
+Plásticas em Geral" segue com o ícone de caixa, o que faz sentido — é o card
+genérico de "peça o que não está na lista", não um produto específico.
 
 As fotos foram padronizadas antes de entrar no site: recortadas na borda do
 produto, redimensionadas para o produto ocupar 92% do quadro e coladas numa tela
 branca de 900x675 (proporção 4:3, a mesma da moldura do card). É por isso que os
-três cards ficam idênticos mesmo os originais tendo tamanhos diferentes.
+cards ficam idênticos mesmo os originais tendo tamanhos bem diferentes, de
+491x419 a 1536x1024. As oito juntas pesam 365 KB e carregam sob demanda
+(`loading="lazy"`), então não atrasam a abertura da página.
+
+Quatro dos originais vieram com título e descrição escritos dentro da imagem.
+Esse texto foi apagado no tratamento, de propósito: ele repetiria o que o card
+já escreve logo abaixo, ficaria ilegível no tamanho real de exibição, não é lido
+pelo Google e não funciona em leitor de tela. Texto é papel do HTML; a imagem
+mostra o produto.
 
 Para adicionar uma foto nova, o caminho seguro é repetir esse padrão: fundo
 branco, produto centralizado, arquivo salvo em 900x675. Depois é só apontar o
