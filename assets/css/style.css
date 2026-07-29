@@ -658,8 +658,12 @@ h3 {
   box-shadow: var(--sombra);
 }
 
+/* Moldura da imagem do produto.
+   4:3 é a proporção em que as fotos foram normalizadas — assim a foto
+   preenche a moldura exatamente, sem sobrar borda e sem cortar nada.
+   Sem foto, esta mesma caixa mostra o ícone de caixa sobre um degradê. */
 .card-produto__img {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   background: linear-gradient(135deg, #eef2f7 0%, #dde5ee 100%);
   display: flex;
   align-items: center;
@@ -669,10 +673,20 @@ h3 {
   position: relative;
 }
 
+/* Quando existe foto: fundo branco (as fotos são recortadas em branco)
+   e nada de opacidade reduzida, que é só do placeholder. */
+.card-produto__img--foto {
+  background: #fff;
+  opacity: 1;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* contain garante que a foto NUNCA seja cortada, mesmo que uma foto
+   futura venha com proporção diferente das três atuais. */
 .card-produto__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 1;
 }
 

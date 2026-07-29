@@ -108,7 +108,7 @@ const CONFIG = {
         "A sacola mais pedida do comércio. Alça camiseta reforçada, boa para mercado, padaria e loja de rua.",
       medidas: ["30x40cm", "38x48cm", "40x50cm", "45x60cm"],
       unidade: "Pacote de 3 kg ou 5 kg, conforme a medida",
-      imagem: "",
+      imagem: "assets/img/produtos/sacola-branca.jpg",
     },
     {
       nome: "Sacola Preta Alça Camiseta",
@@ -117,7 +117,7 @@ const CONFIG = {
         "Mesma resistência da branca, na versão preta — indicada para quem precisa de discrição no que vai dentro.",
       medidas: ["30x40cm", "40x50cm"],
       unidade: "Pacote de 5 kg",
-      imagem: "",
+      imagem: "assets/img/produtos/sacola-preta.jpg",
     },
     {
       nome: "Sacola Amarela Alça Camiseta",
@@ -126,7 +126,7 @@ const CONFIG = {
         "Opção colorida para quem quer destacar a sacola do comércio na rua.",
       medidas: ["38x48cm"],
       unidade: "Pacote de 3 kg",
-      imagem: "",
+      imagem: "assets/img/produtos/sacola-amarela.jpg",
     },
     {
       nome: "Sacola Milheira Plástico Virgem",

@@ -82,9 +82,27 @@ Pegar também CNPJ, e-mail, cidade/região de atendimento e horário, e revisar 
 lista de promessas na seção "A empresa" — há um comentário no `index.html`
 marcando exatamente onde.
 
-Fotos dos produtos fazem diferença grande na conversão. Basta salvar em
-`assets/img/` e preencher o campo `imagem` de cada produto no config. Sem foto o
-card mostra um ícone de caixa, que funciona mas converte menos.
+## Fotos dos produtos
+
+Três produtos já têm foto: sacola branca, preta e amarela. Ficam em
+`assets/img/produtos/`. Os seis restantes mostram um ícone de caixa sobre um
+degradê cinza — funciona, mas converte bem menos que foto real.
+
+As fotos foram padronizadas antes de entrar no site: recortadas na borda do
+produto, redimensionadas para o produto ocupar 92% do quadro e coladas numa tela
+branca de 900x675 (proporção 4:3, a mesma da moldura do card). É por isso que os
+três cards ficam idênticos mesmo os originais tendo tamanhos diferentes.
+
+Para adicionar uma foto nova, o caminho seguro é repetir esse padrão: fundo
+branco, produto centralizado, arquivo salvo em 900x675. Depois é só apontar o
+campo `imagem` do produto no `config.js` para `assets/img/produtos/arquivo.jpg`.
+
+Se a foto vier em outra proporção o site não quebra — o CSS usa `object-fit:
+contain`, que reduz a imagem até caber inteira e nunca corta. Só vai sobrar
+faixa branca dos lados, e o card ficará visualmente diferente dos outros.
+
+Guarde os originais em `imagens/produtos/`, que está no `.gitignore` e não vai
+para o site. Só as versões tratadas dentro de `assets/` são publicadas.
 
 ## Formulário de orçamento
 
