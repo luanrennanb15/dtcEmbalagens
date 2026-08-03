@@ -164,15 +164,22 @@ const CONFIG = {
       unidade: "Bloco",
       imagem: "assets/img/produtos/saco-acoplado.jpg",
     },
+    /* ---- FORA DO AR POR ENQUANTO ----------------------------------
+       Garrafas plásticas. Aparecem no cartão de visita, mas não vieram
+       com medida nem preço, então saíram do catálogo até o Douglas
+       confirmar o que trabalha. A foto continua em
+       assets/img/produtos/garrafas.jpg — para voltar, é só apagar as
+       linhas de comentário abaixo.
     {
       nome: "Garrafas Plásticas",
       categoria: "diversos",
       descricao:
         "Garrafas para envase de água, sucos e bebidas. Consulte capacidades e disponibilidade.",
-      medidas: ["Sob consulta"], // TODO: pedir medidas e forma de venda ao Douglas
+      medidas: ["Sob consulta"],
       unidade: "",
       imagem: "assets/img/produtos/garrafas.jpg",
     },
+    ---------------------------------------------------------------- */
     {
       nome: "Embalagens Plásticas em Geral",
       categoria: "diversos",
