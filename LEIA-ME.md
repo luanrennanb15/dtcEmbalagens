@@ -8,19 +8,32 @@ Para ver: abra o `index.html` no navegador (duplo clique).
 Tudo foi extraído do cartão de visita que está em `imagens/`.
 
 A marca é monocromática azul, sem nenhuma cor quente. As cores estão no topo de
-`assets/css/style.css`, no bloco `:root`: o azul do cubo da logo é `#2a5ca8`
-(`--cor-marca`), o azul institucional usado em títulos e no hero é `#1b4586`, e
-o azul vivo dos botões é `#3d8be8`. Como a paleta é toda azul, o único contraste
-forte do site é o verde do WhatsApp — isso é proposital, faz o botão de contato
-saltar sem brigar com a marca.
+`assets/css/style.css`, no bloco `:root`, e foram amostradas da arte digital
+oficial da DTC (o guia de tamanhos) — não estimadas da foto do cartão, que
+saíram bem mais claras por causa da iluminação. Os valores reais são `#0050b3`
+para o azul da marca e `#002d7e` para o navy institucional.
 
-A logo em `assets/img/logo.svg` é o cubo isométrico redesenhado a partir da foto
-do cartão. Funciona bem, mas se o designer tiver o arquivo vetorial original,
-vale substituir — a reconstrução é fiel na forma, não necessariamente no valor
-exato dos azuis, que foram estimados de uma foto com pouca luz.
+A logo em `assets/img/logo.svg` é o cubo isométrico refeito com essa cor. O logo
+real é de uma cor só, com as faces separadas apenas por vãos brancos — a versão
+anterior tinha três tons de azul, o que estava errado. O nome segue o cartão:
+"DTC" em cinza-escuro e "EMBALAGENS" em azul, com espaçamento largo.
 
-O nome segue o cartão: "DTC" em cinza-escuro e "EMBALAGENS" em azul, com
-espaçamento largo.
+### Sobre o verde do WhatsApp
+
+Existem dois verdes no `:root`, e a diferença é proposital. O verde oficial do
+WhatsApp (`#25d366`) é claro demais para receber texto branco em cima: dá
+1,98:1 de contraste, quando o mínimo legível é 4,5:1. Então `--cor-whatsapp`
+é uma versão escurecida (`#0a8339`, 4,86:1) usada nos botões com texto, e
+`--cor-whatsapp-oficial` só aparece no botão flutuante, que no celular é apenas
+o ícone — reconhecível pela forma e pela cor, sem texto para ler.
+
+Escurecer o verde criou um segundo problema: no hero navy ele deixa de se
+destacar do fundo. As duas exigências se excluem matematicamente (uma pede
+luminância abaixo de 0,183, a outra acima de 0,202). A saída foi dar ao botão
+um contorno claro por dentro, que separa do fundo sem clarear o preenchimento.
+
+Todas as combinações de cor do site foram medidas e passam no mínimo de
+contraste da WCAG.
 
 ## Como editar
 
@@ -81,6 +94,19 @@ consulta".
 Pegar também CNPJ, e-mail, cidade/região de atendimento e horário, e revisar a
 lista de promessas na seção "A empresa" — há um comentário no `index.html`
 marcando exatamente onde.
+
+## Guia de tamanhos
+
+A arte `assets/img/guia-tamanhos.jpg` ganhou seção própria entre o catálogo e
+"A empresa". No desktop ela fica ao lado do texto; no celular vai abaixo, com
+largura limitada para não virar uma parede. Clicar abre a imagem em tamanho
+real, o que no celular aciona o visualizador nativo com zoom — sem precisar de
+biblioteca de lightbox.
+
+**Atenção:** a arte lista sete medidas (25x35, 30x40, 35x45, 38x48, 40x50, 45x60
+e 70x90), mas a lista de preços do Douglas só cobre quatro delas. Ou o catálogo
+está incompleto, ou a arte anuncia medidas que ele não tem. Vale alinhar antes
+de publicar.
 
 ## Fotos dos produtos
 

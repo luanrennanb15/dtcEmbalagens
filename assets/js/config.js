@@ -16,7 +16,7 @@ const CONFIG = {
     nome: "DTC Embalagens",
     slogan: "Preço baixo todo dia e qualidade garantida!", // do cartão de visita
     descricaoCurta:
-      "Sacolas plásticas, copos descartáveis, sacos de lixo e sacos acoplados. Atendimento direto com quem vende, preço por volume e entrega na região.",
+      "Sacolas plásticas, copos descartáveis, sacos de lixo e papel acoplado para frios. Atendimento direto com quem vende, preço por volume e entrega na região.",
     cnpj: "", // TODO: pedir. CNPJ visível pesa MUITO para cliente indústria.
     fundacao: "2025", // TODO: confirmar ano de abertura
   },
@@ -156,13 +156,13 @@ const CONFIG = {
       imagem: "assets/img/produtos/saco-lixo.jpg",
     },
     {
-      nome: "Saco Acoplado (picotado)",
+      nome: "Papel Acoplado para Frios",
       categoria: "diversos",
       descricao:
-        "Saco plástico em bloco picotado, destacado folha a folha. Prático no balcão de hortifruti, açougue e padaria.",
+        "Papel com filme acoplado para embalar queijo, presunto e frios fatiados. Não deixa o produto ressecar nem passar gordura para fora.",
       medidas: ["400 folhas", "500 folhas"],
-      unidade: "Bloco",
-      imagem: "assets/img/produtos/saco-acoplado.jpg",
+      unidade: "Caixa fechada",
+      imagem: "assets/img/produtos/papel-acoplado.jpg",
     },
     /* ---- FORA DO AR POR ENQUANTO ----------------------------------
        Garrafas plásticas. Aparecem no cartão de visita, mas não vieram
