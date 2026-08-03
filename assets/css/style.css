@@ -6,15 +6,18 @@
    ============================================================ */
 
 :root {
-  /* ---------- CORES DA MARCA — extraídas do cartão de visita ----------
-     A DTC usa uma paleta monocromática azul. Não há cor quente na marca,
-     por isso o único contraste forte do site é o verde do WhatsApp. */
-  --cor-marca: #2a5ca8;           /* azul do cubo da logo */
-  --cor-primaria: #1b4586;        /* azul institucional — títulos e superfícies */
-  --cor-primaria-escura: #10305f; /* azul profundo — hero e rodapé */
-  --cor-primaria-clara: #3d74be;  /* face clara do cubo */
-  --cor-destaque: #3d8be8;        /* azul vivo — botões e chamadas de ação */
-  --cor-destaque-escura: #2a72c9;
+  /* ---------- CORES DA MARCA ----------
+     Valores exatos, amostrados da arte digital da DTC (o guia de tamanhos),
+     não estimados da foto do cartão. A marca é monocromática azul: não há
+     cor quente nela, por isso o único contraste forte do site é o verde
+     do WhatsApp. */
+  --cor-marca: #0050b3;           /* azul do cubo da logo e da faixa do rodapé */
+  --cor-primaria: #002d7e;        /* navy institucional — títulos e superfícies */
+  --cor-primaria-escura: #001a4d; /* navy profundo — base dos gradientes */
+  --cor-primaria-clara: #3d7fd6;  /* azul claro — detalhes sobre fundo escuro */
+  --cor-destaque: #0050b3;        /* CTAs sobre fundo CLARO (7,5:1 com texto branco) */
+  --cor-destaque-escura: #003e8c;
+  --cor-realce: #4f97ff;          /* destaques sobre fundo NAVY (4,3:1) */
 
   /* ---------- NEUTROS ---------- */
   --cor-texto: #1b2430;
@@ -22,7 +25,12 @@
   --cor-fundo: #ffffff;
   --cor-fundo-alt: #f4f7fb;
   --cor-borda: #e2e8f0;
-  --cor-whatsapp: #25d366;
+  /* Dois verdes de propósito. O verde oficial do WhatsApp (#25d366) é claro
+     demais para texto branco em cima — dá 1,98:1, ilegível. Então:
+       --cor-whatsapp          verde escurecido, para botões COM TEXTO (4,45:1)
+       --cor-whatsapp-oficial  verde oficial, só onde há ícone e nenhum texto */
+  --cor-whatsapp: #0a8339;
+  --cor-whatsapp-oficial: #25d366;
 
   /* ---------- TIPOGRAFIA ---------- */
   --fonte: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -67,7 +75,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  -webkit-tap-highlight-color: rgba(42, 92, 168, 0.15);
+  -webkit-tap-highlight-color: rgba(0, 80, 179, 0.15);
 }
 
 /* Nada pode estourar a largura da tela no celular */
@@ -175,7 +183,7 @@ h3 {
 .btn--primario {
   background: var(--cor-destaque);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(61, 139, 232, 0.32);
+  box-shadow: 0 4px 14px rgba(0, 80, 179, 0.3);
 }
 
 .btn--primario:hover {
@@ -207,13 +215,17 @@ h3 {
   color: var(--cor-primaria);
 }
 
+/* O verde escuro o bastante para o texto branco ficar legível fica escuro
+   demais para destacar do hero navy — as duas exigências se excluem.
+   O contorno claro resolve: separa do fundo sem clarear o preenchimento. */
 .btn--whats {
   background: var(--cor-whatsapp);
   color: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.4);
 }
 
 .btn--whats:hover {
-  background: #1eb955;
+  background: #096e31;
   transform: translateY(-2px);
 }
 
@@ -373,7 +385,7 @@ h3 {
   height: 640px;
   background: radial-gradient(
     circle,
-    rgba(61, 139, 232, 0.3) 0%,
+    rgba(79, 151, 255, 0.28) 0%,
     transparent 68%
   );
   pointer-events: none;
@@ -413,9 +425,10 @@ h3 {
   margin-bottom: 20px;
 }
 
+/* Sobre o navy, o azul dos botões some. Aqui vai o tom claro. */
 .hero h1 em {
   font-style: normal;
-  color: var(--cor-destaque);
+  color: var(--cor-realce);
 }
 
 .hero__texto {
@@ -448,7 +461,7 @@ h3 {
 }
 
 .hero__prova svg {
-  color: var(--cor-primaria-clara);
+  color: var(--cor-realce);
   flex-shrink: 0;
 }
 
@@ -587,8 +600,8 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(61, 139, 232, 0.12);
-  color: var(--cor-destaque);
+  background: rgba(0, 80, 179, 0.1);
+  color: var(--cor-marca);
   border-radius: var(--raio-sm);
   margin-bottom: 18px;
 }
@@ -837,6 +850,58 @@ h3 {
 }
 
 /* ============================================================
+   GUIA DE TAMANHOS
+   ------------------------------------------------------------
+   A arte é retrato (2:3). No desktop ela fica ao lado do texto,
+   com largura limitada para não dominar a tela. No celular vai
+   para baixo do texto, em largura total.
+   ============================================================ */
+.tamanhos__grid {
+  display: grid;
+  grid-template-columns: 1fr 0.78fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.tamanhos__texto p {
+  color: var(--cor-texto-suave);
+}
+
+.tamanhos__texto .btn {
+  margin-top: 8px;
+}
+
+.tamanhos__arte {
+  margin: 0;
+  text-align: center;
+}
+
+.tamanhos__arte a {
+  display: block;
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+  background: #fff;
+}
+
+.tamanhos__arte a:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-forte);
+}
+
+.tamanhos__arte img {
+  width: 100%;
+  height: auto;
+}
+
+.tamanhos__arte figcaption {
+  margin-top: 12px;
+  font-size: 0.83rem;
+  color: var(--cor-texto-suave);
+}
+
+/* ============================================================
    CONTATO / ORÇAMENTO
    ============================================================ */
 .contato__grid {
@@ -874,7 +939,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(42, 92, 168, 0.09);
+  background: rgba(0, 80, 179, 0.09);
   color: var(--cor-primaria);
   border-radius: var(--raio-sm);
 }
@@ -958,7 +1023,7 @@ h3 {
 .campo textarea:focus {
   outline: none;
   border-color: var(--cor-primaria);
-  box-shadow: 0 0 0 3px rgba(42, 92, 168, 0.14);
+  box-shadow: 0 0 0 3px rgba(0, 80, 179, 0.16);
 }
 
 .form-aviso {
@@ -1064,7 +1129,7 @@ h3 {
 }
 
 .rodape a:hover {
-  color: var(--cor-destaque);
+  color: var(--cor-realce);
 }
 
 .rodape__base {
@@ -1090,13 +1155,15 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--cor-whatsapp);
+  /* Único lugar com o verde oficial: no celular vira só o ícone do
+     WhatsApp, que as pessoas reconhecem pela forma e pela cor. */
+  background: var(--cor-whatsapp-oficial);
   color: #fff;
   padding: 14px 20px;
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.94rem;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 20px rgba(11, 138, 62, 0.4);
   transition: var(--transicao);
 }
 
@@ -1167,7 +1234,8 @@ h3 {
 @media (max-width: 1024px) {
   .hero__grid,
   .sobre__grid,
-  .contato__grid {
+  .contato__grid,
+  .tamanhos__grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -1177,6 +1245,12 @@ h3 {
   .hero__card,
   .form-card {
     max-width: 560px;
+  }
+
+  /* A arte é alta; empilhada, sem limite, viraria uma parede */
+  .tamanhos__arte {
+    max-width: 460px;
+    margin: 0 auto;
   }
 
   .hero__texto {

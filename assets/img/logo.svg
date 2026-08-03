@@ -1,13 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DTC Embalagens">
   <title>DTC Embalagens</title>
-  <!-- Cubo isométrico — reconstruído a partir do cartão de visita.
-       Se você tiver o arquivo vetorial original do designer, use-o no lugar deste. -->
-  <g stroke="#ffffff" stroke-width="2.6" stroke-linejoin="round">
-    <!-- face superior -->
-    <path d="M32 2 L57.98 17 L32 32 L6.02 17 Z" fill="#3D74BE"/>
-    <!-- face esquerda -->
-    <path d="M6.02 17 L32 32 L32 62 L6.02 47 Z" fill="#2A5CA8"/>
-    <!-- face direita -->
-    <path d="M57.98 17 L57.98 47 L32 62 L32 32 Z" fill="#1F4C90"/>
+  <!-- Cubo isométrico da DTC. Ao contrário do que eu tinha desenhado antes,
+       o logo real é de UMA cor só (#0050B3), com as faces separadas apenas
+       por vãos brancos. Cor amostrada da arte oficial da empresa. -->
+  <g fill="#0050b3" stroke="#ffffff" stroke-width="2.8" stroke-linejoin="round">
+    <path d="M32 2 L57.98 17 L32 32 L6.02 17 Z"/>
+    <path d="M6.02 17 L32 32 L32 62 L6.02 47 Z"/>
+    <path d="M57.98 17 L57.98 47 L32 62 L32 32 Z"/>
   </g>
 </svg>
