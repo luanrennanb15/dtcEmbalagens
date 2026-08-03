@@ -84,8 +84,14 @@ marcando exatamente onde.
 
 ## Fotos dos produtos
 
-Os nove produtos têm foto, em `assets/img/produtos/`. As nove somam 444 KB e
-carregam sob demanda, então não pesam na abertura da página.
+Todos os produtos do catálogo têm foto, em `assets/img/produtos/`. Elas carregam
+sob demanda, então não pesam na abertura da página.
+
+Garrafas plásticas estão fora do ar por enquanto — o produto está comentado no
+`config.js` e o texto do site não menciona mais garrafas, para não prometer o
+que o catálogo não mostra. A foto continua salva. Para reativar, apague as
+linhas de comentário em volta do bloco no `config.js` e recoloque a palavra nos
+textos (descrição da home, intro do catálogo, rodapé e meta tags).
 
 As fotos foram padronizadas antes de entrar no site: recortadas na borda do
 produto, redimensionadas para o produto ocupar 92% do quadro e coladas numa tela
