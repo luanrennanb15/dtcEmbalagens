@@ -151,7 +151,7 @@ const CONFIG = {
       categoria: "sacos-lixo",
       descricao:
         "Espessura reforçada para uso comercial e resíduo pesado. Não rasga na hora de retirar do cesto.",
-      medidas: ["20L", "40L", "60L", "100L"],
+      medidas: ["20L", "40L", "60L", "100L", "200L"],
       unidade: "Pacote fechado",
       imagem: "assets/img/produtos/saco-lixo.jpg",
     },
