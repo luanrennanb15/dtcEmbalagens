@@ -147,7 +147,7 @@ const CONFIG = {
       imagem: "assets/img/produtos/copo-descartavel.jpg",
     },
     {
-      nome: "Saco de Lixo Reforçado",
+      nome: "Saco de Lixo Tradicional e Reforçado",
       categoria: "sacos-lixo",
       descricao:
         "Espessura reforçada para uso comercial e resíduo pesado. Não rasga na hora de retirar do cesto.",
